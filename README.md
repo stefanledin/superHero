@@ -12,10 +12,12 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/superHero.min.js"></script>
+<script src="superHero.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+	$('.js-superhero-container').superHero({
+		pushDown: $('.page-wrapper')
+	});
 });
 </script>
 ```
