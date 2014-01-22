@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>superHero.js</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+	<!--<header role="navigation">
+		<ul>
+			<li>Menuitem 1</li>
+			<li>Menuitem 2</li>
+		</ul>
+	</header>-->
+	<div class="js-superhero-container">
+		<img src="IMG_4329.jpg" class="js-superhero-image" alt="Tacko">
+	</div>
+    <div class="page-wrapper">
+        <div class="inner">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+	<script src="../libs/jquery/jquery.js"></script>
+	<script src="superHero.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.js-superhero-container').superHero({
+				//compensateFor: $('header[role="navigation"]'),
+                pushDown: $('.page-wrapper')
+			});
+		});
+	</script>
+</body>
+</html>
