@@ -1,6 +1,6 @@
 /*
- * superHero
- * https://github.com/stefan/superhero
+ * superHero.js
+ * https://github.com/stefanledin/superHero
  *
  * Copyright (c) 2013 Stefan Ledin
  * Licensed under the MIT license.
@@ -9,27 +9,38 @@
 ;(function($, window, document, undefined) {
 
     var defaults = {
-        compensateFor: 0,
+        compensateFor: false,
         inline: false,
-        pushDown: false
+        pushDown: false,
     };
 
     function superHero (element, options) {
+        // The container for the hero
         this.element = element;
+        // Options
         this.options = $.extend( {}, defaults, options);
+        // The image
+        this.image = options.image || element.querySelector('img');
+        // Store the element that is going to be pushed down
         if (this.options.pushDown) {
             this.nextElement = this.options.pushDown;
         }
+        // IGNITION!
         this.init();
     }
 
     superHero.prototype.init = function() {
         this.$window = $(window);
         this.$document = $(document);
+        
         this.getWindowSize = {};
+        
+        // Boot the standard functions
         this.bindEvents();
         this.setWindowSize();
         this.setHeroSize();
+        
+        // "Optional" functions
         if (this.nextElement) {
             this.pushDownElement();
         }

@@ -16,7 +16,12 @@ In your web page:
 <script>
 jQuery(function($) {
 	$('.js-superhero-container').superHero({
-		pushDown: $('.page-wrapper')
+		pushDown: $('.page-wrapper'),
+		image: $('.js-superhero-image'),
+		/**
+		 * Coming soon:
+		 */
+		// compensateFor: $('header[role="navigation"]'),
 	});
 });
 </script>
@@ -27,6 +32,3 @@ _(Coming soon)_
 
 ## Examples
 _(Coming soon)_
-
-## Release History
-_(Nothing yet)_
